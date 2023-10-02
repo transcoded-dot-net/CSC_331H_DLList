@@ -36,14 +36,14 @@ int Doubly_Linked_List<T>::get_length() {
 
 template<class T>
 bool Doubly_Linked_List<T>::is_empty() {
-    return length == 0;
+    return length==0;
 }
 
 template<class T>
 void Doubly_Linked_List<T>::insert_item(T item) {
     iterator = new node<T>;
     iterator->info = item;
-    if (length == 0 || length == 0){
+    if (is_empty() || is_empty()){
         first = iterator;
         last = iterator;
     }
@@ -74,7 +74,7 @@ void Doubly_Linked_List<T>::insert_item(T item) {
 
 template<class T>
 void Doubly_Linked_List<T>::delete_item(T item) {
-    if ( length == 0 || !search_item(item))
+    if ( is_empty() || !search_item(item))
         cout<<"LIST EMPTY OR ITEM NOT IN THE LIST\n";
     else {
         if (item == first->info){
@@ -91,6 +91,7 @@ void Doubly_Linked_List<T>::delete_item(T item) {
                 last->next = first;
             }
         }
+
         else {
             if (length == 2){
                 first->next = NULL;
@@ -134,7 +135,7 @@ bool Doubly_Linked_List<T>::search_item(T item) {
 
 template<class T>
 void Doubly_Linked_List<T>::print_list() {
-    if ( length == 0)
+    if ( is_empty())
         cout<<"\nEMPTY LIST\n";
     else
     {
@@ -151,9 +152,27 @@ void Doubly_Linked_List<T>::print_list() {
 }
 
 template<class T>
+void Doubly_Linked_List<T>::print_list_backwards() {
+    if ( is_empty())
+        cout<<"\nEMPTY LIST\n";
+    else
+    {
+        cout<<"\nLIST :";
+        iterator = last;
+        iterator_print_value();
+        iterator_backwards();
+        while ( iterator != last && iterator != NULL)
+        {
+            iterator_print_value();
+            iterator_backwards();
+        }
+    }
+}
+
+template<class T>
 void Doubly_Linked_List<T>::copy(Doubly_Linked_List<int> &other) {
 length = other.length;
-    if ( other.length == 0 )
+    if ( other.is_empty() )
         first = NULL;
     else{
         first = other.first;

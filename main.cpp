@@ -32,7 +32,7 @@ int main()
 
     choice = printMenu();
 
-    while ( choice != 6 )
+    while ( choice != 7 )
     {
 
         switch ( choice )
@@ -47,10 +47,13 @@ int main()
             case 3 : l.print_list();
                 break;
 
-            case 4 : searchListItem ( l );
+            case 4 : l.print_list_backwards();
                 break;
 
-            case 5 : cout<<"\nThe list contains "<<l.get_length()
+            case 5 : searchListItem ( l );
+                break;
+
+            case 6 : cout<<"\nThe list contains "<<l.get_length()
                          << " items\n\n";
                 break;
 
@@ -84,9 +87,10 @@ int printMenu ()
     cout<<"\n1: Add an item to the list.";
     cout<<"\n2: Delete an item from the list.";
     cout<<"\n3: Print the list.";
-    cout<<"\n4: Search the list for a given item";
-    cout<<"\n5: Return the number of items in the list";
-    cout<<"\n6: Quit.\n\n";
+    cout<<"\n4. Print list from back to front";
+    cout<<"\n5: Search the list for a given item";
+    cout<<"\n6: Return the number of items in the list";
+    cout<<"\n7: Quit.\n\n";
     cin>>c;
 
     return c;
@@ -113,12 +117,7 @@ void deleteListItem ( Doubly_Linked_List<int> &l )
     cout<<"\nEnter the number to delete : ";
     cin>>num;
 
-    if ( l.search_item (num))
-    {
-        l.delete_item (num);
-        cout<<"\nThe number has been deleted\n\n";
-    }
-    else  cout<<"\nThe number is NOT in the list\n\n";
+    l.delete_item(num);
 
 
 }

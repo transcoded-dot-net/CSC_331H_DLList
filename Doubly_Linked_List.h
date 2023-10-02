@@ -48,6 +48,8 @@ public:
     bool search_item(T item);
     //Print all items in the list. Print message if list is empty.
     void print_list();
+    //Print all items in the list (starting at end and going backwards). Print message if list is empty.
+    void print_list_backwards();
     // function to copy a list
     void copy (Doubly_Linked_List<int> &other);
     // Destroy list function
