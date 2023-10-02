@@ -1,5 +1,5 @@
 //
-// Created by Eleanor Heaton on 9/25/23.
+//Created by Eleanor Heaton on 9/25/23.
 //
 
 #include "Doubly_Linked_List.h"
@@ -43,14 +43,13 @@ template<class T>
 void Doubly_Linked_List<T>::insert_item(T item) {
     iterator = new node<T>;
     iterator->info = item;
-    if (is_empty() || is_empty()){
+    if (is_empty()){ // creation of first item in list
         first = iterator;
         last = iterator;
     }
 
-    else if (length == 1) {
+    else if (length == 1) { //
         last = iterator;
-
         first->previous = last;
         first->next = last;
         last->previous = first;
