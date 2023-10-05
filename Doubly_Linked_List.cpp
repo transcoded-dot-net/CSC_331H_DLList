@@ -118,16 +118,19 @@ void Doubly_Linked_List<T>::delete_item(T item) {
 template<class T>
 bool Doubly_Linked_List<T>::search_item(T item) {
     iterator = first;
-    if (iterator != NULL && iterator->info == item)
-        return true;
-    else if (iterator != NULL && iterator->next != NULL)
-        iterator_forward(); 
-    while ( iterator != NULL && iterator != first)
-    {
-        if ( iterator->info == item )
+    if(iterator != NULL){
+        if (iterator->info == item)
             return true;
-        iterator_forward();
+        else if (iterator_next_check())
+            iterator_forward();
+        while (iterator != first)
+        {
+            if (iterator->info == item )
+                return true;
+            iterator_forward();
+        }
     }
+
 
     return false;
 }

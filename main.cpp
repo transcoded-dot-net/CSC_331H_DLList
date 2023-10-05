@@ -77,26 +77,7 @@ int main()
 
     return 0;
 }
-
-//********************functions implementation ********************//
-
-int printMenu ()
-{
-    int c;
-
-    cout<<"\n1: Add an item to the list.";
-    cout<<"\n2: Delete an item from the list.";
-    cout<<"\n3: Print the list.";
-    cout<<"\n4. Print list from back to front";
-    cout<<"\n5: Search the list for a given item";
-    cout<<"\n6: Return the number of items in the list";
-    cout<<"\n7: Quit.\n\n";
-    cin>>c;
-
-    return c;
-}
-
-void insertListItem ( Doubly_Linked_List<int> &l )
+void insertListItem ( Doubly_Linked_List<int> &l ) //inserts given number at end of list
 {
     int num;
 
@@ -109,7 +90,7 @@ void insertListItem ( Doubly_Linked_List<int> &l )
 
 }
 
-void deleteListItem ( Doubly_Linked_List<int> &l )
+void deleteListItem ( Doubly_Linked_List<int> &l ) //deletes first iteration of given number in list
 {
 
     int num;
@@ -122,7 +103,7 @@ void deleteListItem ( Doubly_Linked_List<int> &l )
 
 }
 
-void searchListItem ( Doubly_Linked_List<int>& l )
+void searchListItem ( Doubly_Linked_List<int>& l ) //search for given number
 {
 
     int num;
@@ -136,6 +117,25 @@ void searchListItem ( Doubly_Linked_List<int>& l )
 
     else  cout<<"\nThe number is NOT in the list\n\n";
 
+}
+
+
+//********************functions implementation ********************//
+
+int printMenu () // User Interface
+{
+    int c;
+
+    cout<<"\n1: Add an item to the list.";
+    cout<<"\n2: Delete an item from the list.";
+    cout<<"\n3: Print the list.";
+    cout<<"\n4. Print list from back to front";
+    cout<<"\n5: Search the list for a given item";
+    cout<<"\n6: Return the number of items in the list";
+    cout<<"\n7: Quit.\n\n";
+    cin>>c;
+
+    return c;
 }
 
 
