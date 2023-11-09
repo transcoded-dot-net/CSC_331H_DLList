@@ -227,3 +227,15 @@ template<class T>
 void Doubly_Linked_List<T>::iterator_print_value() {
     cout << iterator->info << " ";
 }
+
+template<class T>
+bool Doubly_Linked_List<T>::iterator_null_check() {
+    if (iterator != NULL)
+        return true;
+    return false;
+}
+
+template<class T>
+int Doubly_Linked_List<T>::iterator_get_value() {
+    return iterator->info;
+}

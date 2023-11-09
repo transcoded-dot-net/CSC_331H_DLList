@@ -60,6 +60,7 @@ public:
     //walks iterator backwards
     void iterator_backwards();
 
+
     //checks if next is null
     bool iterator_next_check();
     //checks if previous is null
@@ -68,7 +69,17 @@ public:
     // prints value of info
     void  iterator_print_value();
 
+    // returns value of info
+    int iterator_get_value();
+
+    // checks if iterator is null
+    bool iterator_null_check();
+
+
+
 };
+
+
 
 
 #endif //DLLIST_ONELASTTRY_DOUBLY_LINKED_LIST_H
