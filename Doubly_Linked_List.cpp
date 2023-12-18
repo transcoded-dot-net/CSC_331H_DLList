@@ -239,3 +239,17 @@ template<class T>
 int Doubly_Linked_List<T>::iterator_get_value() {
     return iterator->info;
 }
+template<class T>
+int Doubly_Linked_List<T>::get_last() {
+    return last;
+}
+template<class T>
+int Doubly_Linked_List<T>::get_first() {
+    return first;
+}
+template<class T>
+friend int Doubly_Linked_List<T>::get_iterator() {
+    return iterator;
+}
+
+

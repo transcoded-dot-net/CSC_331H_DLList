@@ -4,4 +4,6 @@ project(DLList_OneLastTry)
 set(CMAKE_CXX_STANDARD 17)
 add_executable(DLList_OneLastTry main.cpp
         Doubly_Linked_List.cpp
-        Doubly_Linked_List.h)
+        Doubly_Linked_List.h
+        Large_Int.cpp
+        Large_Int.h)

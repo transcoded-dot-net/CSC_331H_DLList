@@ -23,7 +23,7 @@ class Doubly_Linked_List
 private:
     node<T> *first;
     node<T> *last;
-    node<T> *iterator;
+    node<T> *iterator = *last;
     int length;
 public:
     //Constructor 
@@ -76,7 +76,11 @@ public:
     bool iterator_null_check();
 
 
+   friend int* get_last();
 
+   friend int* get_first();
+
+   friend int* get_iterator();
 };
 
 
